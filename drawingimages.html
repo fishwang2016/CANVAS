@@ -13,22 +13,45 @@
 
 	<script>
 
+
+
+
 	var canvas = document.querySelector("canvas");
 	var ctx = canvas.getContext("2d");
 
-	ctx.fillRect(50,50,50,50);
-	var img = new Image();
-	img.src='200.jpg';
+	for (var i=0; i <3; i++){
 
-	img.onload = function(){
+		console.log(i);
 
-		for(var i =0;i<4;i++){
+		for (var j=0;j<3;j++){
+			console.log("J:"+j);
 
-			for (var j=0;j<4;j++){
-					ctx.drawImage(img,j*50,50*i,100,100);
+			// ctx.save();
+			ctx.fillStyle= 'rgb(' + (50*i)+','+ (255-51*i)+',255)';
+			ctx.translate(0,10+i*50);
+			ctx.fillRect(0,0,20,20);
 
-			}
+			ctx.restore();
 		}
+	}
+
+	 ctx.translate(225,0);
+	 ctx.rotate(2.7);
+	 ctx.fillRect(20,20,30,30);
+
+	// ctx.fillRect(50,50,50,50);
+	// var img = new Image();
+	// img.src='200.jpg';
+
+	// img.onload = function(){
+
+	// 	for(var i =0;i<4;i++){
+
+	// 		for (var j=0;j<4;j++){
+	// 				ctx.drawImage(img,j*50,50*i,100,100);
+
+	// 		}
+	// 	}
 
 	
 	// 	ctx.beginPath();
@@ -36,7 +59,7 @@
 	// 	ctx.lineTo(30,90);
 	// 	ctx.lineTo(200,250);
 	// 	ctx.stroke();
-	};
+	// };
 
 
 	</script>
